@@ -5,6 +5,7 @@ var numbers = '0123456789'
 var specialChar = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 var displayPassword = document.getElementById("genPassword");
 var submitBtn = document.querySelector("#genSubmit");
+var copyBtn = document.querySelector("#copyBtn");
 
 //Naming variables for user input for password generation
 var userLength = document.getElementById("characterUserInput");
@@ -14,17 +15,19 @@ var numberBox = document.getElementById("numbersConfirm");
 var specialBox = document.getElementById("specialConfirm");
 
 
-//a function to store values on submit/check to see if the boxes are ticked to concatenate onto character string 
+//on submit, store values, check for checkbox boolean, concatenate onto character string, pass those inputs through password gen function, return password and display
 submitBtn.addEventListener("click", function(e) {
   event.preventDefault();
   var characters = '';
   var passLength = userLength.value;
-  console.log(passLength);
+  // console.log(passLength); for testing
+  //Check if box is checked. if true concatenate onto character string, if false do nothing
   (upperBox.checked) ? characters += uppercase : '';
   (lowerBox.checked) ? characters += lowercase : '';
   (numberBox.checked) ? characters += numbers : '';
   (specialBox.checked) ? characters += specialChar : '';
-  displayPassword.textContent = passwordGenerator(passLength, characters);
+  //run these perameters through the generator function, and return to display via text content
+  displayPassword.value = passwordGenerator(passLength, characters);
 })
 
 
@@ -37,3 +40,16 @@ function passwordGenerator(length, characters) {
   }
   return password;
 }
+
+//Copy to clipboard
+copyBtn.addEventListener("click",function copyToClipboard(){
+  var copyText = document.getElementById("genPassword");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+})

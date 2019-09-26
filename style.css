@@ -1,0 +1,63 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-image: linear-gradient(to bottom right, #0E3470, #E7333C);
+}
+
+.content-wrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-top:100px;
+}
+
+.jumbotron {
+  background-color: #fff6;
+}
+
+#genSubmit {
+  background-color: #000;
+  border: none;
+  width: 100%;
+}
+
+#copyBtn {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #000;
+
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.form {
+  padding-top: 40px;
+  text-align: left;
+  color: #fff;
+}
+
+.newPass {
+  color: #fff;
+  text-align: center;
+  padding-top: 20px;
+  word-wrap: break-word;
+}
+
+input#genPassword {
+  background-color: transparent;
+  width: 100%;
+  color: #333;
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.col-md-6{
+  padding: 5px!important;
+  margin: 0!important;
+}
+
