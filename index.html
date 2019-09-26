@@ -5,14 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Password Generator</title>
-  <link rel="">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
   <div class="content-wrapper">
+    <jumbotron>
     <h1>
       Password Generator
     </h1>
-    <h3 id = "genPassword"></h3>
+    <div class="form">
+      <div class="form-group">
+          <label for="characterUserInput">How long would you like your password?</label>
+          <input type="number" class="form-control" id="characterUserInput" min=8 max=128 placeholder="Must be between 8 and 128 characters">
+      </div>
+      <div class="form-group">
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="lowercaseConfirm">
+              <label class="form-check-label" for="uppercaseConfirm">
+                Lowercase Letters?
+              </label>
+            </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="uppercaseConfirm">
+              <label class="form-check-label" for="uppercaseConfirm">
+                Uppercase Letters?
+              </label>
+            </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="numbersConfirm">
+              <label class="form-check-label" for="numbersConfirm">
+                Numbers?
+              </label>
+            </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="specialConfirm">
+              <label class="form-check-label" for="specialConfirm">
+                Special Characters?
+              </label>
+            </div>
+            
+      </div>
+      <button type="submit" class="btn btn-primary mb-2" id="genSubmit">Generate Password</button>
+    </div>
+    
+    <h3>Your new password is: <span id = "genPassword"></span></h3>
+  </jumbotron>
   </div>
   <script src="script.js"></script>
 </body>

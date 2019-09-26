@@ -5,46 +5,58 @@ var numbers = '0123456789'
 var specialChar = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 var characters = '';
 var displayPassword = document.getElementById("genPassword");
+var submitBtn = document.querySelector("#genSubmit");
 
-//Prompt the user for password generation
-var userLength = prompt("How long do you want your password to be? Must be between 8 and 128 characters.");
-Number(userLength);
-var userSpecial = prompt("Do you want special characters?");
-var userNumber = prompt("Do you want numbers?");
-var userLower = prompt("Do you want uppercase letters?");
-var userUpper = prompt("Do you want lowercase letters?");
+//Naming variables for user input for password generation
+var userLength = document.getElementById("characterUserInput");
+var userUpper = document.getElementById("upperCaseConfirm");
+var userLower = document.getElementById("lowerCaseConfirm");
+var userNumber = document.getElementById("numbersConfirm");
+var userSpecial = document.getElementById("specialConfirm");
 
-//this shit's changing
-userUpper.toLowerCase;
-userSpecial.toLowerCase;
-userLower.toLowerCase;
-
-//If the user wants the various requirements, concatonate want they want into one string of characters for the program to choose from
-if (userUpper === "yes") {
-  characters += uppercase;
-};
-if (userLower === "yes") {
-  characters += lowercase;
-};
-if (userNumber === "yes") {
-  characters += numbers;
-};
-if (userSpecial === "yes") {
-  characters += specialChar;
-};
-
-//The function to generate the password
-function passwordGenerator(length, characters) {
-  var password = ' ';
-  for (var i=0; i<length; i++)
-  {
-    password +=characters.charAt(Math.floor(Math.random()*characters.length));
-  }
-  return password;
+//a function to store values on submit
+function userInput () {
+  event.preventDefault();
+  var passLength = userLength.value;
+  console.log(passLength);
+  var specialCharacters = userSpecial.value;
+  console.log(specialCharacters);
+  // var upperLetters = userUpper.value;
+  // var lowerLetters = userLower.value;
+  // var number = userNumber.value;
+  // checkChecked();
+  // passwordGenerator(passLength, characters);
+  
 }
 
-//for testing purposes
-console.log(passwordGenerator(userLength, characters));
+// //a function to check checkboxes
+// function checkChecked() {
+//   if (upperLetters === "true") {
+//   characters += uppercase;
+// };
+// if (lowerLetters === "true") {
+//   characters += lowercase;
+// };
+// if (number === "true") {
+//   characters += numbers;
+// };
+// if (specialCharacters === "true") {
+//   characters += specialChar;
+// };
+// }
 
-//displaying the password
-displayPassword.textContent = 'Your secure password is: ' + passwordGenerator(userLength, characters);
+// //The function to generate the password
+// function passwordGenerator(length, characters) {
+//   var password = ' ';
+//   for (var i=0; i<length; i++)
+//   {
+//     password +=characters.charAt(Math.floor(Math.random()*characters.length));
+//   }
+//   return password;
+// }
+
+
+// //displaying the password
+// displayPassword.textContent = 'Your secure password is: ' + passwordGenerator(userLength, characters);
+
+submitBtn.addEventListener("click", userInput);
