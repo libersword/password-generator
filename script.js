@@ -2,7 +2,7 @@
 var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lowercase = 'abcdefghijklmnopqrstuvwxyz';
 var numbers = '0123456789'
-var specialChar = '0123456789';
+var specialChar = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 var characters = '';
 var displayPassword = document.getElementById("genPassword");
 
@@ -13,6 +13,11 @@ var userSpecial = prompt("Do you want special characters?");
 var userNumber = prompt("Do you want numbers?");
 var userLower = prompt("Do you want uppercase letters?");
 var userUpper = prompt("Do you want lowercase letters?");
+
+//this shit's changing
+userUpper.toLowerCase;
+userSpecial.toLowerCase;
+userLower.toLowerCase;
 
 //If the user wants the various requirements, concatonate want they want into one string of characters for the program to choose from
 if (userUpper === "yes") {
